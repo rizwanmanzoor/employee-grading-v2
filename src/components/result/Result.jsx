@@ -107,7 +107,7 @@ const Result = () => {
               <div
                 key={i}
                 // className="bg-(--bg-muted) p-4 rounded-xl border border-(--border-color)"
-                className="bg-accent p-4 rounded-xl"
+                className="bg-card p-4 rounded-xl"
               >
                 <p className="text-sm text-(--text-muted) mb-1">{item.label}</p>
                 <p className="font-bold">{item.value}</p>
@@ -142,7 +142,7 @@ const Result = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {items.map((title) => (
               // <div key={title} className="p-3 bg-(--bg-muted) rounded-lg">
-              <div key={title} className="p-3 bg-accent rounded-lg">
+              <div key={title} className="p-3 bg-card rounded-lg">
                 <p className="text-xs text-(--text-muted) mb-2">{title}</p>
                 <div className="flex gap-1">
                   {["Verified", "Relevant"].map((tag) => (
@@ -198,7 +198,7 @@ const Result = () => {
                 </div>
                 <span className="font-bold text-lg">{item.score}</span>
               </div>
-              <div className="h-3 bg-accent rounded-full overflow-hidden">
+              <div className="h-3 bg-card rounded-full overflow-hidden">
                 <div
                   className={`h-full ${item.color} rounded-full`}
                   style={{ width: item.width }}
