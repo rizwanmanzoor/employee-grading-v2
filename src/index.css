@@ -74,8 +74,8 @@
   /* Violet */
   --secondary-foreground: #ffffff;
 
-  --accent: #f59e0b;
-  /* Gold */
+  --accent: #ced4da;
+    /* lighter french_gray */
   --accent-foreground: #0f172a;
 
   --destructive: #dc2626;
@@ -140,7 +140,7 @@
   /* Bright Violet */
   --secondary-foreground: #f8fafc;
 
-  --accent: #fbbf24;
+  --accent: #1e293b;
   /* Bright Gold */
   --accent-foreground: #0f172a;
 
