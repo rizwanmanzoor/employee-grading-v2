@@ -7,7 +7,7 @@ import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-    <BrowserRouter basename="/employee-grading">
+    <BrowserRouter basename="/employee-grading-v2">
       <App />
     </BrowserRouter>
   </ThemeProvider>
