@@ -1,0 +1,288 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* ===== Base Design Tokens ===== */
+  --radius: 0.625rem;
+
+  /* ===== Light Theme ===== */
+  --background: #ffffff;
+  /* Background */
+  --foreground: #0f172a;
+  /* Text Dark */
+
+  /* Surfaces */
+  --card: #f8fafc;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+
+  /* Muted + Border */
+  --muted: #f1f5f9;
+  /* Tertiary background */
+  --muted-foreground: #64748b;
+  /* Tertiary text */
+  --border: #e2e8f0;
+  --input: var(--border);
+
+  /* Brand / Primary Accents */
+  --primary: #1e40af;
+  /* Deep Blue */
+  --primary-foreground: #ffffff;
+
+  --secondary: #8b5cf6;
+  /* Violet */
+  --secondary-foreground: #ffffff;
+
+  --accent: #f59e0b;
+  /* Gold */
+  --accent-foreground: #0f172a;
+
+  --destructive: #dc2626;
+  /* Red tone for destructive actions */
+  --destructive-foreground: #ffffff;
+
+  /* Charts / Utility */
+  --chart-1: #1e40af;
+  /* Deep Blue */
+  --chart-2: #8b5cf6;
+  /* Violet */
+  --chart-3: #f59e0b;
+  /* Gold */
+  --chart-4: #a855f7;
+  /* Purple */
+  --chart-5: #fbbf24;
+  /* Amber */
+
+  /* Shadows / Rings */
+  --ring: var(--primary);
+  --ring-offset: var(--background);
+
+  /* Sidebar / Layouts */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+.dark {
+  /* ===== Dark Theme ===== */
+  --background: #0f172a;
+  /* Dark Navy */
+  --foreground: #f8fafc;
+  /* Text Light */
+
+  /* Surfaces */
+  --card: #1e293b;
+  /* Dark Gray */
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+
+  /* Muted + Border */
+  --muted: #334155;
+  /* Tertiary Background */
+  --muted-foreground: #94a3b8;
+  /* Tertiary Text */
+  --border: #475569;
+  --input: var(--border);
+
+  /* Brand / Primary Accents */
+  --primary: #3b82f6;
+  /* Bright Blue */
+  --primary-foreground: #e2e8f0;
+
+  --secondary: #a78bfa;
+  /* Bright Violet */
+  --secondary-foreground: #f8fafc;
+
+  --accent: #fbbf24;
+  /* Bright Gold */
+  --accent-foreground: #0f172a;
+
+  --destructive: #ef4444;
+  /* Bright Red */
+  --destructive-foreground: #f8fafc;
+
+  /* Charts / Utility */
+  --chart-1: #3b82f6;
+  /* Bright Blue */
+  --chart-2: #a78bfa;
+  /* Bright Violet */
+  --chart-3: #fbbf24;
+  /* Bright Gold */
+  --chart-4: #c4b5fd;
+  /* Light Purple */
+  --chart-5: #fcd34d;
+  /* Bright Amber */
+
+  /* Shadows / Rings */
+  --ring: var(--primary);
+  --ring-offset: var(--background);
+
+  /* Sidebar / Layouts */
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* === Layout Styling === */
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Wrapper layout (full height, scroll inside body only) */
+  .app-layout {
+    @apply flex flex-col h-screen overflow-hidden;
+  }
+
+  /* Sticky navbar */
+  nav {
+    @apply sticky top-0 z-50 bg-background border-b border-border;
+  }
+
+  /* Main content area (scrollable body section) */
+  .app-body {
+    @apply flex-1 overflow-y-auto px-4 sm:px-6 md:px-8 lg:px-12 py-3 mx-auto w-full max-w-7xl scroll-smooth;
+    height: calc(100vh - 70px);
+  }
+
+  /* === Custom Scrollbar === */
+  .app-body::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .app-body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .app-body::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 9999px;
+  }
+
+  .custom-scroll {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+  }
+
+  .custom-scroll::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 9999px;
+  }
+
+  /* Hide scrollbar on mobile */
+  @media (max-width: 768px) {
+    .app-body::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@layer components {
+
+  .input-field {
+    @apply flex items-center space-x-2 border-2 rounded-xl transition-all duration-200;
+    @apply border-border bg-background text-foreground;
+  }
+
+  .input-field:hover {
+    @apply bg-accent/70;
+  }
+
+  .input-field-selected {
+    @apply border-primary bg-accent text-accent-foreground;
+  }
+
+  .input-field label {
+    @apply w-full h-full p-4 flex items-center gap-2 text-sm font-medium text-foreground capitalize cursor-pointer;
+  }
+
+  .input-field-disabled {
+    @apply opacity-60 cursor-not-allowed;
+  }
+
+  .radio-field {
+    @apply flex items-center space-x-2 p-4 border-0 rounded-xl cursor-pointer transition-all duration-200 border-border text-foreground;
+  }
+
+  .radio-field:has(input:checked) {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+
+  .radio-field:has(input:checked) label {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+}
